@@ -10,5 +10,4 @@ public class PersistenciaApplication {
 		SpringApplication.run(PersistenciaApplication.class, args);
 	}
 
-	
 }
