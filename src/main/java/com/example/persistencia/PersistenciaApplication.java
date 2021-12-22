@@ -27,13 +27,7 @@ public class PersistenciaApplication {
 	
 	@GetMapping("/getOne")
 	public Libro ObtenerUno(@RequestParam(value = "id") int id) {
-		List<Libro> l= service.listar();
-		Libro regresar = null;
-		for (Libro lib: l) {
-			if(lib.getId()==id) {
-				regresar=lib;
-			}
-		}
+		Libro regresar = service.obtenerUno(id);
 		return regresar;
 	}
 
@@ -58,21 +52,15 @@ public class PersistenciaApplication {
 			@RequestParam(value="titulo")String titulo, 
 			@RequestParam(value="autor")String autor,
 			@RequestParam(value="descripcion")String descripcion) {
-		List<Libro> l= service.listar();
-		Libro regresar = null;
-		Libro editado = null;
-		for (Libro lib: l) {
-			if(lib.getId()==id) {
-				regresar=lib;
-			}
-		}
+		Libro regresar = service.obtenerUno(id);
 		
 		if(regresar != null) {
-			service.eliminar(id);
-			editado = new Libro(id,titulo,autor,descripcion);
-			service.editar(editado);
+			regresar.setTitulo(titulo);
+			regresar.setAutor(autor);
+			regresar.setDescripcion(descripcion);
+			service.editar(regresar);
 		}
 		
-		return editado;
+		return regresar;
 	}
 }

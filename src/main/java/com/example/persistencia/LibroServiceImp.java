@@ -19,7 +19,15 @@ public class LibroServiceImp implements LibroService {
 	@Override
 	public Libro obtenerUno(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Libro> l= repositorio.findAll();
+		Libro enc = null;
+		for (Libro lib: l) {
+			if(lib.getId()==id) {
+				enc=lib;
+			}
+		}
+		
+		return enc;
 	}
 
 	@Override
@@ -37,15 +45,10 @@ public class LibroServiceImp implements LibroService {
 	@Override
 	public Libro eliminar(int id) {
 		// TODO Auto-generated method stub
-		List<Libro> l= repositorio.findAll();
-		Libro eli = null;
-		for (Libro lib: l) {
-			if(lib.getId()==id) {
-				eli=lib;
-			}
+		Libro eli = obtenerUno(id);
+		if(eli != null) {
+			repositorio.delete(eli);
 		}
-		repositorio.delete(eli);
-		
 		return eli;
 	}
 
