@@ -17,6 +17,25 @@ public class Libro {
 	@Column
 	private String descripcion;
 	
+	public Libro(String titulo, String autor, String descripcion) {
+		// TODO Auto-generated constructor stub
+		this.titulo=titulo;
+		this.autor=autor;
+		this.descripcion=descripcion;
+	}
+	
+	public Libro(int id, String titulo, String autor, String descripcion) {
+		// TODO Auto-generated constructor stub
+		this.id=id;
+		this.titulo=titulo;
+		this.autor=autor;
+		this.descripcion=descripcion;
+	}
+	
+	public Libro() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}

@@ -25,19 +25,28 @@ public class LibroServiceImp implements LibroService {
 	@Override
 	public Libro agregar(Libro l) {
 		// TODO Auto-generated method stub
-		return null;
+		return repositorio.save(l);
 	}
 
 	@Override
 	public Libro editar(Libro l) {
 		// TODO Auto-generated method stub
-		return null;
+		return repositorio.save(l);
 	}
 
 	@Override
 	public Libro eliminar(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Libro> l= repositorio.findAll();
+		Libro eli = null;
+		for (Libro lib: l) {
+			if(lib.getId()==id) {
+				eli=lib;
+			}
+		}
+		repositorio.delete(eli);
+		
+		return eli;
 	}
 
 }
