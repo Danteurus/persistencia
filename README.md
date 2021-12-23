@@ -1,7 +1,7 @@
 En este proyecto se realizó persistencia de datos utilizando dos bases de datos diferentes:
 
-+MySQL
-+Redis
++MySQL puerto 3306
++Redis puerto 3308
 
 Cada una de ellas tiene sus propios mapeos pero funcionan de la misma forma.
 
