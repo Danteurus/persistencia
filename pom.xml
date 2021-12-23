@@ -30,11 +30,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>redis.client</groupId>
+			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.isis.core</groupId>
+			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
 		</dependency>
 		<dependency>
