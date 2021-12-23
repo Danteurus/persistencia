@@ -44,10 +44,10 @@ http://localhost:8090/add?titulo=Clementine&autor=Mario&descripcion=Un cuento so
 
 -/addR
 
-Este mapeo nos permite agregar un nuveo libro a la base de datos de Redis.
+Este mapeo nos permite agregar un nuveo libro a la base de datos de Redis, es necesario ingresar los parametros id, titulo, autor y descripción.
 
 Ejemplo:
-http://localhost:8090/addR?titulo=Clementine&autor=Mario&descripcion=Un cuento sobre clementine
+http://localhost:8090/addR?id=6&titulo=Clementine&autor=Mario&descripcion=Un cuento sobre clementine
 
 -/delete
 
